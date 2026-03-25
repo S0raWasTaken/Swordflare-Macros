@@ -53,7 +53,9 @@ HourlyReset() {
     if !toggle
         return
     SetTimer(DoWalkCycle, 0)
+    SetTimer(Click, 0)
     ReleaseMovementKeys()
+    Sleep(100)
     Suicide()
     SetTimer(Setup, -100)
 }
