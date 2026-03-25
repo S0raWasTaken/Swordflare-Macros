@@ -75,13 +75,13 @@ WalkToSingularity() {
     HoldKey("s", 1300)
     HoldKey("a", 400)
     
-    RawMouseMove(-700, 0)
+    RawMouseMove(-700, -200)
 
     Sleep(500)
     HoldKey("e", 1800)
     Sleep(100)
 
-    RawMouseMove(700, 0)
+    RawMouseMove(700, 200)
     Sleep(100)
 
     Send("q")
