@@ -19,6 +19,7 @@
 toggle := false
 skill_hotkey := "r"
 pixel_colour := 0x757CEE
+mouse_speed := 16
 
 F1:: {
     global toggle
@@ -40,10 +41,9 @@ WatchPixel() {
     if !toggle
         return
 
-    x2 := A_ScreenWidth // 2
-    y1 := A_ScreenHeight // 2
+    x := A_ScreenWidth // 4
 
-    if PixelSearch(&foundX, &foundY, 0, y1, x2, A_ScreenHeight, pixel_colour, 0) {
+    if PixelSearch(&foundX, &foundY, x, 0, x, A_ScreenHeight, pixel_colour, 0) {
         PauseFarming()
         SetTimer(WatchPixel, 0)
         WalkToSingularity()
@@ -74,7 +74,15 @@ WalkToSingularity() {
     HoldKey("d", 4000)
     HoldKey("s", 1300)
     HoldKey("a", 400)
+    
+    RawMouseMove(-700, 0)
+
+    Sleep(500)
     HoldKey("e", 1800)
+    Sleep(100)
+
+    RawMouseMove(700, 0)
+    Sleep(100)
 
     Send("q")
     Sleep(800)
@@ -121,9 +129,10 @@ VoidSlice() {
 
 MoveMouse() {
     global toggle
+    global mouse_speed
     if !toggle
         return
-    RawMouseMove(15, 0)
+    RawMouseMove(mouse_speed, 0)
 }
 
 RawMouseMove(x, y) {
