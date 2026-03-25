@@ -52,12 +52,13 @@ HourlyReset() {
     global toggle
     if !toggle
         return
+
+    toggle := false
     SetTimer(DoWalkCycle, 0)
     SetTimer(Click, 0)
     ReleaseMovementKeys()
-    Sleep(100)
-    Suicide()
-    SetTimer(Setup, -100)
+    toggle := true
+    SetTimer(Setup, -1000)
 }
 
 Suicide() {
