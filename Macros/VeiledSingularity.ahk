@@ -85,7 +85,7 @@ WalkToSingularity() {
     Sleep(100)
 
     Send("q")
-    Sleep(800)
+    Sleep(1000)
     Send("q")
 
     SetTimer(WatchPixel, 50)
