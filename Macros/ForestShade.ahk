@@ -63,9 +63,9 @@ HourlyReset() {
 
 Suicide() {
     Send("{Esc}")
-    Sleep(500)
+    Sleep(100)
     Send("r")
-    Sleep(500)
+    Sleep(100)
     Send("{Enter}")
 }
 
