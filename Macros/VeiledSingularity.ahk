@@ -18,7 +18,7 @@
 
 toggle := false
 skill_hotkey := "r"
-pixel_colour := 0x757CEE
+pixel_colour := 0x747FFF
 mouse_speed := 16
 
 F1:: {
